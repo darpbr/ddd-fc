@@ -9,7 +9,7 @@ export default class ProductRepository implements ProductRepositoryInterface{
             id: entity.getId(),
             name: entity.getName(),
             price: entity.getPrice(),
-        })
+        });
     }
 
     async update(entity: Product): Promise<void>{

@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for domain/entity/order_item.ts</title>
+    <title>Code coverage report for infrastructure/repository/order.repository.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">domain/entity</a> order_item.ts</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">infrastructure/repository</a> order.repository.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">55.17% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>62/62</span>
+                <span class='fraction'>32/58</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>19/19</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">40% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>9/9</span>
+                <span class='fraction'>2/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">55.17% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>62/62</span>
+                <span class='fraction'>32/58</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -120,11 +120,7 @@
 <a name='L55'></a><a href='#L55'>55</a>
 <a name='L56'></a><a href='#L56'>56</a>
 <a name='L57'></a><a href='#L57'>57</a>
-<a name='L58'></a><a href='#L58'>58</a>
-<a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a>
-<a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L58'></a><a href='#L58'>58</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -134,118 +130,110 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">export default class OrderItem{
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import Order from "../../domain/entity/order";
+import OrderRepositoryInterface from "../../domain/repository/order-repository.interface";
+import OrderItemModel from "../db/sequelize/model/order-item.model";
+import OrderModel from "../db/sequelize/model/order.model";
 &nbsp;
-    private _id: string;
-    private _productId: string;
-    private _name: string;
-    private _price: number;
-    private _quantity: number;
-    private _total: number;
 &nbsp;
-    constructor(id: string, name: string, price: number, productId: string, quantity: number){
-        this._id = id;
-        this._name = name;
-        this._price = price;
-        this._productId = productId;
-        this._quantity = quantity;
-        this._total = this.total();
-        this.validate();
+export default class OrderRepository implements OrderRepositoryInterface{
+    
+    async create(entity: Order): Promise&lt;void&gt;{
+        await OrderModel.create({
+            id: entity.getId(),
+            customer_id: entity.getCustomerId(),
+            total: entity.getTotal(),
+            items: entity.getItems().map((item) =&gt; ({
+                id: item.getId(),
+                name: item.getName(),
+                price: item.getPrice(),
+                product_id: item.getProductId(),
+                quantity: item.getQuantity(),
+            })),
+        },
+        {
+            include: [{ model: OrderItemModel}],
+        });
     }
+    
+<span class="fstat-no" title="function not covered" >    async update(entity: Order): Promise&lt;void&gt;{</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error("Not implemented yet");</span>
+<span class="cstat-no" title="statement not covered" >        // await ProductModel.update(</span>
+<span class="cstat-no" title="statement not covered" >        //     {</span>
+<span class="cstat-no" title="statement not covered" >        //         name: entity.getName(),</span>
+<span class="cstat-no" title="statement not covered" >        //         price: entity.getPrice(),</span>
+<span class="cstat-no" title="statement not covered" >        //     },</span>
+<span class="cstat-no" title="statement not covered" >        //     {</span>
+<span class="cstat-no" title="statement not covered" >        //         where: {</span>
+<span class="cstat-no" title="statement not covered" >        //             id: entity.getId(),</span>
+<span class="cstat-no" title="statement not covered" >        //         },</span>
+<span class="cstat-no" title="statement not covered" >        //     });</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    getId(): string {
-        return this._id;
-    }
+<span class="fstat-no" title="function not covered" >    async find(id: string): Promise&lt;Order&gt;{</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error("Not implemented yet");</span>
+<span class="cstat-no" title="statement not covered" >        // const productModel = await ProductModel.findOne({ where: { id }});</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        // return new Product(</span>
+<span class="cstat-no" title="statement not covered" >        //     productModel.id,</span>
+<span class="cstat-no" title="statement not covered" >        //     productModel.name,</span>
+<span class="cstat-no" title="statement not covered" >        //     productModel.price</span>
+<span class="cstat-no" title="statement not covered" >        // )</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    getName(): string{
-        return this._name;
-    }
-&nbsp;
-    getQuantity(): number {
-        return this._quantity;
-    }
-&nbsp;
-    getPrice(): number{
-        return this._price * this._quantity;
-    }
-&nbsp;
-    getProductId(): string{
-        return this._productId;
-    }
-&nbsp;
-    total(): number{
-        return this._price * this._quantity;
-    }
-&nbsp;
-    validate(): boolean {
-        if(this._id.length === 0){
-            throw new Error("Id is required");
-        }
-        if(this._name.length === 0){
-            throw new Error("Name is required");
-        }
-        if(this._productId.length === 0){
-            throw new Error("ProductId is required");
-        }
-        if(this._price &lt;= 0){
-            throw new Error("Price must be greater than 0");
-        }
-        if(this._quantity &lt;= 0){
-            throw new Error("Quantity must be greater than 0");
-        }
-        return true;
-    }
+<span class="fstat-no" title="function not covered" >    async findAll(): Promise&lt;Order[]&gt;{</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error("Not implemented yet");</span>
+<span class="cstat-no" title="statement not covered" >        // const productModels = await ProductModel.findAll();</span>
+<span class="cstat-no" title="statement not covered" >        // return productModels.map((productModel) =&gt; </span>
+<span class="cstat-no" title="statement not covered" >        // new Product(productModel.id, productModel.name, productModel.price));</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 }</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
