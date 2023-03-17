@@ -26,7 +26,7 @@ export default class OrderItemModel extends Model{
     declare order_id: string;
 
     @BelongsTo(() => OrderModel)
-    declare order: ProductModel;
+    declare order: OrderModel;
     
     @Column({ allowNull: false })
     declare quantity: number;
@@ -36,5 +36,8 @@ export default class OrderItemModel extends Model{
 
     @Column({ allowNull: false })
     declare price: number;
+
+    @Column({ allowNull: true })
+    declare total: number;
     
 }

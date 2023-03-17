@@ -46,8 +46,8 @@ describe("Order repository tests", () => {
         await productRepository.create(product);
 
         const orderItem = new OrderItem("1", product.getName(),product.getPrice(),product.getId(),2);
-        
         const order = new Order("123","123",[orderItem]);
+        
         const orderRepository = new OrderRepository();
         orderRepository.create(order);
 
@@ -62,13 +62,13 @@ describe("Order repository tests", () => {
             total: order.getTotal(),
             items: [
                 {
-                id: orderItem.getId(),
-                name: orderItem.getName(),
-                price: orderItem.getPrice(),
-                quantity: orderItem.getQuantity(),
-                order_id: "123",
-                product_id: "123",
-              },
+                    id: orderItem.getId(),
+                    name: orderItem.getName(),
+                    price: orderItem.getPrice(),
+                    quantity: orderItem.getQuantity(),
+                    order_id: "123",
+                    product_id: "123",
+                  },
             ],
         });
     });
