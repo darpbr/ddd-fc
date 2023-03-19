@@ -17,23 +17,23 @@ export default class OrderItem{
         this.validate();
     }
 
-    getId(): string {
+    get id(): string {
         return this._id;
     }
 
-    getName(): string{
+    get name(): string{
         return this._name;
     }
 
-    getQuantity(): number {
+    get quantity(): number {
         return this._quantity;
     }
 
-    getPrice(): number{
+    get price(): number{
         return this._price * this._quantity;
     }
 
-    getProductId(): string{
+    get productId(): string{
         return this._productId;
     }
 

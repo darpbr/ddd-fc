@@ -11,15 +11,15 @@ export default class Product {
         this.validate();
     }
 
-    getId(): string {
+    get id(): string {
         return this._id;
     }
 
-    getName(): string {
+    get name(): string {
         return this._name;
     }
 
-    getPrice(): number{
+    get price(): number{
         return this._price;
     }
 

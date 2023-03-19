@@ -28,7 +28,7 @@ describe("Customer repository tests", () => {
         const customerRepository = new CustomerRepository();
         const customer = new Customer("123", "Customer 1");
         const address = new Address("Street 1", 1, "zipcode","City");
-        customer.setAddress(address);
+        customer.changeAddress(address);
 
         await customerRepository.create(customer);
 
@@ -36,13 +36,13 @@ describe("Customer repository tests", () => {
 
         expect(customerModel.toJSON()).toStrictEqual({
             id: "123",
-            name: customer.getName(),
+            name: customer.name,
             active: customer.isActive(),
-            rewardpoints: customer.getRewardPoints(),
-            street: address.getStreet(),
-            number: address.getNumber(),
-            city: address.getCity(),
-            zipcode: address.getZip(),
+            rewardpoints: customer.rewardPoints,
+            street: address.street,
+            number: address.number,
+            city: address.city,
+            zipcode: address.zip,
         });
     });
 
@@ -50,7 +50,7 @@ describe("Customer repository tests", () => {
         const customerRepository = new CustomerRepository();
         const customer = new Customer("123", "Customer 1");
         const address = new Address("Street 1", 1, "zipcode","City");
-        customer.setAddress(address);
+        customer.changeAddress(address);
         customer.activate();
 
         await customerRepository.create(customer);
@@ -58,14 +58,14 @@ describe("Customer repository tests", () => {
         const customerModel = await CustomerModel.findOne({ where: { id: "123" } });
 
         expect(customerModel.toJSON()).toStrictEqual({
-            id: customer.getId(),
-            name: customer.getName(),
+            id: customer.id,
+            name: customer.name,
             active: customer.isActive(),
-            street: customer.getAddress().getStreet(),
-            city: customer.getAddress().getCity(),
-            number: customer.getAddress().getNumber(),
-            zipcode: customer.getAddress().getZip(),
-            rewardpoints: customer.getRewardPoints(), 
+            street: customer.address.street,
+            city: customer.address.city,
+            number: customer.address.number,
+            zipcode: customer.address.zip,
+            rewardpoints: customer.rewardPoints, 
         });
 
         customer.changeName("Customer 2");
@@ -75,14 +75,14 @@ describe("Customer repository tests", () => {
         const customerModel2 = await CustomerModel.findOne({ where: { id: "123" } });
 
         expect(customerModel2.toJSON()).toStrictEqual({
-            id: customer.getId(),
-            name: customer.getName(),
+            id: customer.id,
+            name: customer.name,
             active: customer.isActive(),
-            street: customer.getAddress().getStreet(),
-            city: customer.getAddress().getCity(),
-            number: customer.getAddress().getNumber(),
-            zipcode: customer.getAddress().getZip(),
-            rewardpoints: customer.getRewardPoints(), 
+            street: customer.address.street,
+            city: customer.address.city,
+            number: customer.address.number,
+            zipcode: customer.address.zip,
+            rewardpoints: customer.rewardPoints, 
         });
 
     });
@@ -91,11 +91,11 @@ describe("Customer repository tests", () => {
         const customerRepository = new CustomerRepository();
         const customer = new Customer("123", "Customer 1");
         const address = new Address("Street 1", 1, "zipcode","City");
-        customer.setAddress(address);
+        customer.changeAddress(address);
 
         await customerRepository.create(customer);
 
-        const customerResult = await customerRepository.find(customer.getId());
+        const customerResult = await customerRepository.find(customer.id);
         
         expect(customer).toStrictEqual(customerResult);
     });
@@ -104,13 +104,13 @@ describe("Customer repository tests", () => {
         const customerRepository = new CustomerRepository();
         const customer = new Customer("123", "Customer 1");
         const address = new Address("Street 1", 1, "zipcode","City");
-        customer.setAddress(address);
+        customer.changeAddress(address);
         customer.activate();
         customer.addRewardPoints(10);
 
         const customer2 = new Customer("456", "Customer 2");
         const address2 = new Address("Street 2", 2, "zipcode","City");
-        customer2.setAddress(address2);
+        customer2.changeAddress(address2);
         customer2.activate();
         customer2.addRewardPoints(20);
 

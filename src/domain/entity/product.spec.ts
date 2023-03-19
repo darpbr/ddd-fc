@@ -24,13 +24,13 @@ describe("Product unit tests", () => {
 
             const product = new Product("1", "Product 1", 100);
             product.changeName("Product 2");
-            expect(product.getName()).toBe("Product 2");
+            expect(product.name).toBe("Product 2");
     });
     
     it("should change price", () => {
 
         const product = new Product("1", "Product 1", 100);
         product.changePrice(200);
-        expect(product.getPrice()).toBe(200);
+        expect(product.price).toBe(200);
 });
 });

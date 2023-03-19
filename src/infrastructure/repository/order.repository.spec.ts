@@ -12,6 +12,7 @@ import CustomerRepository from "./customer.repository";
 import OrderRepository from "./order.repository";
 import ProductRepository from "./product.repository";
 
+
 describe("Order repository tests", () => {
 
     let sequelize: Sequelize;
@@ -24,7 +25,7 @@ describe("Order repository tests", () => {
             sync: { force: true }
         });
 
-        sequelize.addModels([CustomerModel, OrderModel, OrderItemModel, ProductModel,]);
+        sequelize.addModels([CustomerModel, OrderModel, OrderItemModel, ProductModel]);
         await sequelize.sync();
     });
 
@@ -32,45 +33,51 @@ describe("Order repository tests", () => {
         await sequelize.close();
     });
 
-    it("should create a new order", async () => {
-        
+    it("Should create a new Order",async ()=> {
+
         const customerRepository = new CustomerRepository();
         const customer = new Customer("123","Customer 1");
-        const address = new Address("Street 1", 1, "Zipcode 1","City 1");
-
+        const address = new Address("street 1",1,"zip coded 1", "city 1");
         customer.changeAddress(address);
         await customerRepository.create(customer);
 
         const productRepository = new ProductRepository();
-        const product = new Product("123","Product 1",10);
+        const product = new Product("123","Product 1", 10);
         await productRepository.create(product);
 
-        const orderItem = new OrderItem("1", product.getName(),product.getPrice(),product.getId(),2);
-        const order = new Order("123","123",[orderItem]);
-        
+        const orderItem = new OrderItem(
+            "1",
+            product.name,
+            product.price,
+            product.id,
+            2
+        );
+
+        const order = new Order("123","123",[orderItem])
         const orderRepository = new OrderRepository();
-        orderRepository.create(order);
+        await orderRepository.create(order);
 
         const orderModel = await OrderModel.findOne({
-            where: { id: order.getId() },
+            where: { id: order.id },
             include: ["items"],
         });
 
         expect(orderModel.toJSON()).toStrictEqual({
-            id: order.getId(),
-            customer_id: order.getCustomerId(),
-            total: order.getTotal(),
+            id: "123",
+            customer_id: "123",
+            total: order.total(),
             items: [
                 {
-                    id: orderItem.getId(),
-                    name: orderItem.getName(),
-                    price: orderItem.getPrice(),
-                    quantity: orderItem.getQuantity(),
+                    id: orderItem.id,
+                    name: orderItem.name,
+                    price: orderItem.price,
+                    quantity: orderItem.quantity,
                     order_id: "123",
                     product_id: "123",
-                  },
+                },
             ],
         });
+
     });
 
 });

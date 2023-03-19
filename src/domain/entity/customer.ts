@@ -15,25 +15,26 @@ export default class Customer {
         this.validate();
     }
 
-    getId(): string{
+    get id(): string{
         return this._id;
     }
 
-    getName(): string{
+    get name(): string{
         return this._name;
     }
 
-    getAddress(): Address{
+    get address(): Address{
         return this._address;
     }
 
-    getRewardPoints(): number{
+    get rewardPoints(): number{
         return this._rewardPoints;
     }
 
     isActive(): boolean{
         return this._active;
     }
+    
     validate(){
         if(this._id.length === 0){
             throw new Error("Id is required");
@@ -57,10 +58,6 @@ export default class Customer {
 
     deactivate(){
         this._active = false;
-    }
-
-    setAddress(address: Address){
-        this._address = address;
     }
 
     changeAddress(address: Address){

@@ -15,24 +15,20 @@ export default class Order{
         this.validate();
     }
 
-    getId(): string{
+    get id(): string{
         return this._id;
     }
 
-    getTotal(): number {
-        return this._total;
-    }
-
-    getCustomerId(): string{
+    get customerId(): string{
         return this._customerId;
     }
 
-    getItems(): OrderItem[]{
+    get items(): OrderItem[]{
         return this._items;
     }
 
     total(): number{
-        return this._items.reduce((acc, item) => acc + item.getPrice(), 0);
+        return this._items.reduce((acc, item) => acc + item.price, 0);
     }
 
     validate(): boolean{
@@ -45,7 +41,7 @@ export default class Order{
         if(this._items.length === 0){
             throw new Error("Items are required");
         }
-        if(this._items.some(item => item.getQuantity() <= 0)){
+        if(this._items.some(item => item.quantity <= 0)){
             throw new Error("Quantity must be greater than 0");
         }
         return true;

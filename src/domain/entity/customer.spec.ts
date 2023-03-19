@@ -19,14 +19,14 @@ describe("Customer unit tests", () => {
         const customer = new Customer("123","John");
         customer.changeName("Jane")
 
-        expect(customer.getName()).toBe("Jane");
+        expect(customer.name).toBe("Jane");
     });
 
     it("should activate customer", () => {
 
         const customer = new Customer("1","customer 1");
         const address = new Address("street 1",123,"13330-250","Sao Paulo");
-        customer.setAddress(address);
+        customer.changeAddress(address);
 
         customer.activate();
 
@@ -52,13 +52,13 @@ describe("Customer unit tests", () => {
 
     it("should add reward points", () =>{
         const customer = new Customer("1","customer 1");
-        expect(customer.getRewardPoints()).toBe(0);
+        expect(customer.rewardPoints).toBe(0);
         
         customer.addRewardPoints(10);
-        expect(customer.getRewardPoints()).toBe(10);
+        expect(customer.rewardPoints).toBe(10);
 
         customer.addRewardPoints(10);
-        expect(customer.getRewardPoints()).toBe(20);
+        expect(customer.rewardPoints).toBe(20);
 
     });
 

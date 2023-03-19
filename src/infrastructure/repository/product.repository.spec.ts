@@ -78,9 +78,9 @@ describe("Product repository tests", () => {
         const foundProduct = await productRepository.find("1");
 
         expect(productModel.toJSON()).toStrictEqual({
-            id: foundProduct.getId(),
-            name: foundProduct.getName(),
-            price: foundProduct.getPrice(),
+            id: foundProduct.id,
+            name: foundProduct.name,
+            price: foundProduct.price,
         });
     });
 

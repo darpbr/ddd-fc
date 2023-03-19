@@ -13,19 +13,19 @@ export default class Address {
         this.validate();
     }
 
-    getStreet(): string{
+    get street(): string{
         return this._street;
     }
 
-    getNumber(): number{
+    get number(): number{
         return this._number;
     }
 
-    getZip(): string{
+    get zip(): string{
         return this._zip;
     }
 
-    getCity(): string{
+    get city(): string{
         return this._city;
     }
 

@@ -2,10 +2,8 @@ import { BelongsTo, Column, ForeignKey, Model, PrimaryKey, Table } from "sequeli
 import OrderModel from "./order.model";
 import ProductModel from "./product.model";
 
-
-
 @Table({
-    tableName: "order_items",
+    tableName: "orders_items",
     timestamps: false,
 })
 export default class OrderItemModel extends Model{
@@ -27,7 +25,7 @@ export default class OrderItemModel extends Model{
 
     @BelongsTo(() => OrderModel)
     declare order: OrderModel;
-    
+
     @Column({ allowNull: false })
     declare quantity: number;
 
@@ -36,8 +34,4 @@ export default class OrderItemModel extends Model{
 
     @Column({ allowNull: false })
     declare price: number;
-
-    @Column({ allowNull: true })
-    declare total: number;
-    
 }

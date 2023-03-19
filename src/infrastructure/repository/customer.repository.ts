@@ -7,31 +7,31 @@ export default class CustomerRepository implements CustomerRepositoryInterface{
     
     async create(entity: Customer): Promise<void>{
         await CustomerModel.create({
-            id: entity.getId(),
-            name: entity.getName(),
-            street: entity.getAddress().getStreet(),
-            number: entity.getAddress().getNumber(),
-            zipcode: entity.getAddress().getZip(),
-            city: entity.getAddress().getCity(),
+            id: entity.id,
+            name: entity.name,
+            street: entity.address.street,
+            number: entity.address.number,
+            zipcode: entity.address.zip,
+            city: entity.address.city,
             active: entity.isActive(),
-            rewardpoints: entity.getRewardPoints(),
+            rewardpoints: entity.rewardPoints,
         });
     }
 
     async update(entity: Customer): Promise<void>{
         await CustomerModel.update(
             {
-                name: entity.getName(),
-                street: entity.getAddress().getStreet(),
-                number: entity.getAddress().getNumber(),
-                zipcode: entity.getAddress().getZip(),
-                city: entity.getAddress().getCity(),
+                name: entity.name,
+                street: entity.address.street,
+                number: entity.address.number,
+                zipcode: entity.address.zip,
+                city: entity.address.city,
                 active: entity.isActive(),
-                rewardpoints: entity.getRewardPoints(),
+                rewardpoints: entity.rewardPoints,
             },
             {
                 where: {
-                    id: entity.getId(),
+                    id: entity.id,
                 },
             });
     }
@@ -72,7 +72,7 @@ export default class CustomerRepository implements CustomerRepositoryInterface{
                 customerModels.zipcode,
                 customerModels.city
                 );
-            customer.setAddress(address);
+            customer.changeAddress(address);
             if(customerModels.active){
                 customer.activate();
             }
