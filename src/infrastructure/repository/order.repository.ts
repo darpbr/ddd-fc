@@ -75,21 +75,19 @@ export default class OrderRepository implements OrderRepositoryInterface{
         
         const orders = orderModels.map((orderModel) => {
 
-            const orderItemModels = orderModel.items;
-            const orderItems = orderItemModels.map((orderItemModels) => {
-                const orderItem = new OrderItem(
-                    orderItemModels.id,
-                    orderItemModels.name,
-                    orderItemModels.price,
-                    orderItemModels.product_id,
-                    orderItemModels.quantity
-                    );
-                return orderItem;
-            });
             const order = new Order(
                 orderModel.id,
                 orderModel.customer_id,
-                orderItems
+                orderModel.items.map((orderItemModels) => {
+                    const orderItem = new OrderItem(
+                        orderItemModels.id,
+                        orderItemModels.name,
+                        orderItemModels.price,
+                        orderItemModels.product_id,
+                        orderItemModels.quantity
+                        );
+                    return orderItem;
+                })
             );
 
             return order;
