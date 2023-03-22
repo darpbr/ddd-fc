@@ -27,8 +27,16 @@ export default class Order{
         return this._items;
     }
 
+    changeCustomerId(customer_id: string): void {
+        this._customerId = customer_id;
+    }
+
+    addItem(item: OrderItem): void{
+        this.items.push(item);
+    }
+
     total(): number{
-        return this._items.reduce((acc, item) => acc + item.price, 0);
+        return this._items.reduce((acc, item) => acc + item.orderItemTotal(), 0);
     }
 
     validate(): boolean{

@@ -13,7 +13,7 @@ export default class OrderItem{
         this._price = price;
         this._productId = productId;
         this._quantity = quantity;
-        this._total = this.total();
+        this._total = this.orderItemTotal();
         this.validate();
     }
 
@@ -30,14 +30,14 @@ export default class OrderItem{
     }
 
     get price(): number{
-        return this._price * this._quantity;
+        return this._price;
     }
 
     get productId(): string{
         return this._productId;
     }
 
-    total(): number{
+    orderItemTotal(): number{
         return this._price * this._quantity;
     }
 
