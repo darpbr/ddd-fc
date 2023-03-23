@@ -81,6 +81,7 @@ describe("Order repository tests", () => {
     });
 
     it("should update a order", async () => {
+        
         const customerRepository = new CustomerRepository();
         const customer = new Customer("123","Customer 1");
         const address = new Address("street 1",1,"zip coded 1", "city 1");
@@ -143,7 +144,7 @@ describe("Order repository tests", () => {
             include: ["items"],
         });
 
-        expect(orderModel.items).toHaveLength(1);
+        expect(orderModel.items).toHaveLength(2);
 
         expect(orderModel.toJSON()).toStrictEqual({
             id: order.id,
@@ -158,14 +159,14 @@ describe("Order repository tests", () => {
                     order_id: "123",
                     product_id: "123",
                 }
-                // ,{
-                //     id: orderItem2.id,
-                //     name: orderItem2.name,
-                //     price: orderItem2.price,
-                //     quantity: orderItem2.quantity,
-                //     order_id: "123",
-                //     product_id: "987",
-                // }
+                ,{
+                    id: orderItem2.id,
+                    name: orderItem2.name,
+                    price: orderItem2.price,
+                    quantity: orderItem2.quantity,
+                    order_id: "123",
+                    product_id: "987",
+                }
             ]
         });
     });
